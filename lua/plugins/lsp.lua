@@ -60,6 +60,7 @@ return {
         "javascript",
         "tsx",
         "typescript",
+        "css",
 
         -- Config/Data
         "csv",
@@ -107,6 +108,10 @@ return {
 
         -- Webdev
         "astro-language-server",
+        "prettier",
+        "tailwindcss-language-server",
+
+        -- "",
 
         -- Config
         "json-lsp",
