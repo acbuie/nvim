@@ -8,6 +8,7 @@ return {
         markdown = { "prettier" },
         python = { "ruff" },
         tex = { "latexindent" },
+        yaml = { "prettier" },
       },
     },
   },
