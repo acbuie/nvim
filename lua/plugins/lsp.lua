@@ -1,7 +1,16 @@
 return {
   {
     "saghen/blink.cmp",
+    dependencies = {
+      { "saghen/blink.compat" },
+      { "micangl/cmp-vimtex" },
+    },
     opts = {
+      -- fuzzy = {
+      --   max_typos = function()
+      --     return 0
+      --   end,
+      -- },
       keymap = { preset = "enter" },
       completion = {
         menu = {
@@ -17,7 +26,16 @@ return {
             border = "rounded",
           },
         },
-        list = { selection = "auto_insert" },
+        list = { selection = { preselect = false, auto_insert = true } },
+      },
+      sources = {
+        compat = { "vimtex" },
+        -- providers = {
+        --   vimtex = {
+        --     name = "vimtex",
+        --     module = "blink.compat.source",
+        --   },
+        -- },
       },
       appearance = { nerd_font_variant = "Nerd Font Mono" },
     },
