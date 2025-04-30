@@ -1,9 +1,15 @@
 return {
   {
     "ibhagwan/fzf-lua",
-    -- opts = function(_, opts)
-    --
-    -- end,
+    opts = {
+      file_ignore_patterns = {
+        "node_modules/",
+        ".git/",
+        ".venv/",
+        "dist/",
+        "build/",
+      },
+    },
     keys = {
       { "<leader>/", false },
       { "<leader>fw", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
