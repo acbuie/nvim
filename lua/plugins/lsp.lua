@@ -30,12 +30,6 @@ return {
       },
       sources = {
         compat = { "vimtex" },
-        -- providers = {
-        --   vimtex = {
-        --     name = "vimtex",
-        --     module = "blink.compat.source",
-        --   },
-        -- },
       },
       appearance = { nerd_font_variant = "Nerd Font Mono" },
     },
