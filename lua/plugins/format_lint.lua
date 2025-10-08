@@ -1,3 +1,8 @@
+local py_exec = function()
+  local virtual = os.getenv("VIRTUAL_ENV")
+  return { "--python-executable", virtual .. "/bin/python3" }
+end
+
 return {
   {
     "stevearc/conform.nvim",
@@ -16,12 +21,12 @@ return {
   {
     "mfussenegger/nvim-lint",
     opts = {
+      linters_by_ft = {
+        python = { "mypy" },
+      },
       linters = {
         mypy = {
-          -- Only use mypy with `pyproject.toml` found
-          condition = function(ctx)
-            return vim.fs.find({ "pyproject.toml" }, { path = ctx.filename, upward = true })[1]
-          end,
+          prepend_args = py_exec(),
         },
       },
     },
