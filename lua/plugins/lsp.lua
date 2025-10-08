@@ -96,6 +96,7 @@ return {
         -- Python
         "ruff",
         "pyright",
+        "ty",
         "mypy",
 
         -- R
@@ -130,6 +131,9 @@ return {
             { "<leader>co", LazyVim.lsp.action["source.organizeImports"], desc = "Organize Imports" },
           },
         },
+        -- ty = {
+        --   diagnosticMode = "workspace",
+        -- },
         pyright = {
           -- Only use as LSP, no diagnostics or type checking
           settings = {
