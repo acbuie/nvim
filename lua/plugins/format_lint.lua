@@ -8,6 +8,7 @@ return {
         markdown = { "prettier" },
         python = { "ruff" },
         tex = { "latexindent" },
+        typst = { "typstyle", lsp_format = "fallback" },
         yaml = { "prettier" },
       },
     },

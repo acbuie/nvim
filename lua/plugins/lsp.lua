@@ -80,6 +80,7 @@ return {
         "markdown",
         "markdown_inline",
         "regex",
+        "typst",
       },
     },
   },
@@ -113,9 +114,10 @@ return {
         "taplo", -- toml
         "yaml-language-server",
 
-        -- Latex
+        -- Typesetting
         "texlab",
         "latexindent",
+        "tinymist",
       },
     },
   },
