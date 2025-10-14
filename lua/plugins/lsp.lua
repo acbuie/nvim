@@ -63,6 +63,7 @@ return {
         "toml",
         "xml",
         "yaml",
+        "prisma",
 
         -- Nvim
         "lua",
@@ -106,6 +107,7 @@ return {
         "astro-language-server",
         "prettier",
         "tailwindcss-language-server",
+        "prisma-language-server",
 
         -- "",
 
@@ -146,6 +148,8 @@ return {
             },
           },
         },
+
+        prismals = {},
       },
     },
   },
