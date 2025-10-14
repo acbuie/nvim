@@ -1,6 +1,10 @@
 local py_exec = function()
   local virtual = os.getenv("VIRTUAL_ENV")
-  return { "--python-executable", virtual .. "/bin/python3" }
+  if virtual then
+    return { "--python-executable", virtual .. "/bin/python3" }
+  else
+    return nil
+  end
 end
 
 return {
