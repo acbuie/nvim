@@ -3,3 +3,9 @@
 -- Add any additional options here
 
 --TODO: Add global float borders, see #31074
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})

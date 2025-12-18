@@ -121,6 +121,7 @@ return {
         "texlab",
         "latexindent",
         "tinymist",
+        "mdx-analyzer",
       },
     },
   },
