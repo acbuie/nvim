@@ -5,6 +5,10 @@ local keymap = vim.keymap
 -- jk
 keymap.set("i", "jk", "<esc>", { desc = "Exit Insert mode with `jk`" })
 
+-- Indent in visual mode
+keymap.set("v", "<Tab>", ">gv", { desc = "Indent line" })
+keymap.set("v", "<S-Tab>", "<gv", { desc = "Unindent line" })
+
 -- save file
 keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
