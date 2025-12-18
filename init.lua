@@ -1,1 +1,1 @@
-require("src.core")
+require("config")
