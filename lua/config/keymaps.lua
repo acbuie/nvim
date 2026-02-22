@@ -23,3 +23,8 @@ keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height
 keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+-- LSP
+vim.keymap.set("n", "K", function()
+  vim.lsp.buf.hover({ border = "rounded", max_height = 25, max_width = 120 })
+end, { desc = "Hover documentation" })
