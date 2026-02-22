@@ -25,9 +25,11 @@ return {
     styles = {
       notification = {
         -- wo = { wrap = true } -- Wrap notifications
-      }
-    }
+      },
+    },
   },
+
+  -- stylua: ignore start
   keys = {
     -- top level
     { "<leader><space>", function() Snacks.picker.files() end, desc = "Find Files" },
@@ -90,9 +92,10 @@ return {
     { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
     { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
     -- Other
-    { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
-    { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
-    { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
-    { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
-  }
+    { "<leader>z", function() Snacks.zen() end, desc = "Toggle Zen Mode" },
+    { "<leader>Z", function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
+    { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
+    { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
+  },
+  -- stylua: ignore end
 }
