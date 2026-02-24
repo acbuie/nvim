@@ -26,5 +26,5 @@ keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase W
 
 -- LSP
 vim.keymap.set("n", "K", function()
-  vim.lsp.buf.hover({ border = "rounded", max_height = 25, max_width = 120 })
+  vim.lsp.buf.hover({ border = "single", max_height = 25, max_width = 120 })
 end, { desc = "Hover documentation" })
