@@ -8,5 +8,14 @@ return {
   end,
   opts = {
     preset = "modern",
+    spec = {
+      { "<leader>f", group = "Find" },
+      { "<leader>g", group = "Git" },
+      { "<leader>s", group = "Search (grep)" },
+      { "<leader>x", group = "Diagnostics" },
+      { "<leader>l", group = "LSP", icon = { icon = "󰿘", hl = "Keyword" } },
+      { "<leader>b", group = "Buffer" },
+      { "<leader>u", group = "User Toggles" },
+    },
   },
 }
