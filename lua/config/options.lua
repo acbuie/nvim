@@ -20,6 +20,7 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 opt.winborder = "rounded"
+vim.diagnostic.config({ virtual_text = true })
 
 -- split
 opt.splitright = true

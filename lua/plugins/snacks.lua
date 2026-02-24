@@ -31,6 +31,9 @@ return {
 
   -- stylua: ignore start
   keys = {
+    -- Misc
+    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+    -- Picker
     -- top level
     { "<leader><space>", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
@@ -98,4 +101,34 @@ return {
     { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
   },
   -- stylua: ignore end
+  init = function()
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "VeryLazy",
+      callback = function()
+        -- Custom virtual text toggle
+        Snacks.toggle({
+          id = "virtual_text",
+          name = "Virtual Text",
+          get = function()
+            return vim.diagnostic.config().virtual_text
+          end,
+          set = function(state)
+            if state then
+              vim.diagnostic.config({ virtual_text = true })
+            else
+              vim.diagnostic.config({ virtual_text = false })
+            end
+          end,
+        }):map("<leader>uv")
+
+        -- Toggle functions
+        Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+        Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
+        Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
+        Snacks.toggle.inlay_hints():map("<leader>uh")
+        Snacks.toggle.diagnostics():map("<leader>ud")
+        Snacks.toggle.dim():map("<leader>uD")
+      end,
+    })
+  end,
 }
