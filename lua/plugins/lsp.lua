@@ -28,15 +28,15 @@ return {
           {
             "r_language_server",
             {
-              on_attach = function(client, _)
+              on_attach = function(client, _) -- No autoformatting, defer to air
                 client.server_capabilities.documentFormattingProvider = false
                 client.server_capabilities.documentRangeFormattingProvider = false
               end,
             },
           },
-          { "air" },
+          { "air" }, -- Formatting
           {
-            "jarl",
+            "jarl", -- Linting
             -- Custom config as it is not yet available
             {
               cmd = { "jarl", "server" },
@@ -56,13 +56,13 @@ return {
           { "ruff" },
 
           -- Typesetting
-          { "rumdl" },
-          { "tinymist" },
+          { "rumdl" }, -- Markdown
+          { "tinymist" }, -- Typst
 
           -- Web
           { "html" },
-          { "ts_ls" },
-          { "astro" },
+          { "ts_ls" }, -- TypeScript
+          { "astro" }, -- Astro
         },
       }
       return opts
