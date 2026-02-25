@@ -1,148 +1,80 @@
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPre", "BufNewFile" },
-    build = ":TSUpdate",
-    opts = {
-      highlight = { enable = true },
-      indent = { enable = true },
+    "neovim/nvim-lspconfig",
+    opts = function()
+      local opts = {
+        lsps = {
+          -- NOTE: Does not auto install, each needs to be installed with Mason
 
-      auto_install = true,
-      ensure_installed = {
-        -- Shell
-        "bash",
-        "fish",
-        "printf",
-
-        -- Web
-        "astro",
-        "html",
-        "javascript",
-        "tsx",
-        "typescript",
-        "css",
-
-        -- Config/Data
-        "csv",
-        "json",
-        "jsonc",
-        "toml",
-        "xml",
-        "yaml",
-        "prisma",
-
-        -- Nvim
-        "lua",
-        "luadoc",
-        "vim",
-        "vimdoc",
-
-        -- DS
-        "python",
-        "query",
-        "r",
-
-        -- Other
-        "latex",
-        "markdown",
-        "markdown_inline",
-        "regex",
-        "typst",
-      },
-    },
-  },
-  {
-    "mason-org/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {
-        -- Lua
-        "lua_ls",
-        "stylua",
-        -- "selene",
-
-        -- Python
-        "ruff",
-        "ty",
-        -- "mypy",
-
-        -- R
-        "r_language_server",
-
-        -- Webdev
-        "astro",
-        -- "prettier",
-        "cssls",
-        "html",
-        "prismals",
-        "tailwindcss",
-        "ts_ls",
-
-        -- Config
-        "jsonls",
-        -- "jq",
-        "taplo", -- toml
-        "yamlls",
-
-        -- Typesetting
-        "texlab",
-        -- "latexindent",
-        "tinymist",
-        "mdx_analyzer",
-      },
-    },
-    dependencies = {
-      {
-        "mason-org/mason.nvim",
-        opts = {
-          -- NOTE: Doesn't actually seem to work
-          ensure_installed = {
-            "jq",
-            "prettier",
-            "selene",
-            "latexindent",
-          },
-        },
-      },
-      {
-        "neovim/nvim-lspconfig",
-        config = function()
-          -- lua_ls config
-          vim.lsp.config("lua_ls", {
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" },
-                },
-                workspace = {
-                  library = { vim.env.VIMRUNTIME },
-                  checkThirdParty = true,
+          -- Lua
+          {
+            "lua_ls",
+            {
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    globals = { "vim" },
+                  },
+                  workspace = {
+                    library = { vim.env.VIMRUNTIME },
+                    checkThirdParty = true,
+                  },
                 },
               },
             },
-          })
-        end,
-      },
-    },
-  },
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        astro = { "prettier" },
-        json = { "jq" },
-        lua = { "stylua" },
-        markdown = { "prettier" },
-        python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-        tex = { "latexindent" },
-        typst = { "typstyle", lsp_format = "fallback" },
-        yaml = { "prettier" },
-      },
+          },
 
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_format = "fallback",
-      },
-    },
+          -- R
+          {
+            "r_language_server",
+            {
+              on_attach = function(client, _)
+                client.server_capabilities.documentFormattingProvider = false
+                client.server_capabilities.documentRangeFormattingProvider = false
+              end,
+            },
+          },
+          { "air" },
+          {
+            "jarl",
+            -- Custom config as it is not yet available
+            {
+              cmd = { "jarl", "server" },
+              filetypes = { "r", "rmd" },
+              root_markers = { ".git" },
+              root_dir = function(bufnr, on_dir)
+                on_dir(vim.fs.root(bufnr, ".git") or vim.uv.os_homedir())
+              end,
+            },
+          },
+
+          -- Rust
+          { "rust-analyzer" },
+
+          -- Python
+          { "ty" },
+          { "ruff" },
+
+          -- Typesetting
+          { "rumdl" },
+          { "tinymist" },
+
+          -- Web
+          { "html" },
+          { "ts_ls" },
+          { "astro" },
+        },
+      }
+      return opts
+    end,
+    config = function(_, opts)
+      for _, lsp in pairs(opts.lsps) do
+        local name, config = lsp[1], lsp[2]
+        if config then
+          vim.lsp.config(name, config)
+        end
+        vim.lsp.enable(name)
+      end
+    end,
   },
-  -- For nvim-lint {},
 }
