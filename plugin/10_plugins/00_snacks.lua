@@ -58,6 +58,7 @@ Snacks.toggle.inlay_hints():map("<leader>uh")
 Snacks.toggle.diagnostics():map("<leader>ud")
 Snacks.toggle.dim():map("<leader>uD")
 
+-- TODO: Maybe remap these to use standard vim.map binding
 -- stylua: ignore start
 local keymaps = {
     -- Top Pickers & Explorer

@@ -10,7 +10,7 @@ keymap.set("v", "<S-Tab>", "<gv", { desc = "Unindent line" })
 -- save file
 keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
--- Move to window using the <ctrl> hjkl keys
+-- Move to split using the <ctrl> hjkl keys
 -- keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 -- keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 -- keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
