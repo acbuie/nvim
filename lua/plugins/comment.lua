@@ -1,27 +1,3 @@
-return {
-  {
-    "nvim-mini/mini.comment",
-    opts = {},
-  },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
-    keys = {
-      {
-        "<leader>st",
-        function()
-          Snacks.picker.todo_comments()
-        end,
-        desc = "Todo",
-      },
-      {
-        "<leader>sT",
-        function()
-          Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
-        end,
-        desc = "Todo/Fix/Fixme",
-      },
-    },
-  },
-}
+vim.pack.add({ "https://github.com/nvim-mini/mini.comment" })
+
+require("mini.comment").setup()

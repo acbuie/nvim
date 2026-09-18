@@ -1,31 +1,34 @@
-local opt = vim.opt
+vim.g.mapleader = " "
+-- vim.g.maplocalleader = "\"
 
-opt.relativenumber = true
-opt.number = true
-
-opt.wrap = false
+vim.o.relativenumber = true
+vim.o.number = true
+vim.o.cursorline = true -- Highlight line
+vim.o.wrap = false
+vim.o.scrolloff = 10 -- 10 line offset from cursor
+vim.o.sidescrolloff = 8 -- 8 cols offset
 
 -- tabs
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.autoindent = true
 
 -- search
-opt.ignorecase = true
-opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true -- Case sensitive if upper case included
 
 -- ui
-opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
-opt.winborder = "rounded"
+vim.o.termguicolors = true
+vim.o.background = "dark"
+vim.o.signcolumn = "yes" -- Always show sign col
+vim.o.winborder = "rounded"
 vim.diagnostic.config({ virtual_text = true })
 
 -- split
-opt.splitright = true
-opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- misc
-opt.backspace = "indent,eol,start"
-opt.clipboard:append("unnamedplus")
+vim.o.backspace = "indent,eol,start"
+vim.o.clipboard = "unnamedplus"
