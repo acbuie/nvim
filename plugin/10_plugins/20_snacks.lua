@@ -7,8 +7,8 @@ local Snacks = require("snacks")
 
 Snacks.setup({
   bigfile = { enabled = true },
-  dashboard = { 
-    enabled = true,     
+  dashboard = {
+    enabled = true,
     sections = {
       { section = "header" },
       { section = "keys", gap = 1, padding = 1 },
@@ -84,7 +84,7 @@ local keymaps = {
     },
     { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
     { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
-    
+
     -- Find
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
@@ -92,7 +92,7 @@ local keymaps = {
     { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
     { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
     { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
-    
+
     -- Git
     { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
     { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
@@ -163,7 +163,7 @@ local keymaps = {
     { "<leader>uZ",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
     { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
-    
+
     { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
