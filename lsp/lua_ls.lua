@@ -2,7 +2,7 @@ return {
   settings = {
     Lua = {
       diagnostics = {
-        globals = {"vim"}
+        globals = { "vim" },
       },
       runtime = {
         version = "LuaJIT",
@@ -11,7 +11,7 @@ return {
         preloadFileSize = 10000,
         library = {
           vim.env.VIMRUNTIME,
-        }
+        },
       },
     },
   },
