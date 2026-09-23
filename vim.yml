@@ -45,3 +45,5 @@ globals:
       - type: function
   vim:
     any: true
+  Snacks:
+    any: true
