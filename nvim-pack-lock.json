@@ -29,6 +29,18 @@
       "rev": "27a29d6b949b9497f80a0a03421e89fed71d8c37",
       "src": "https://github.com/nvim-mini/mini.comment"
     },
+    "mini.cursorword": {
+      "rev": "d06a70d2779851b2119459943312a4215039b153",
+      "src": "https://github.com/nvim-mini/mini.cursorword"
+    },
+    "mini.pairs": {
+      "rev": "b1c5a726921b7a8c9321e9a7a208aa0571de5810",
+      "src": "https://github.com/nvim-mini/mini.pairs"
+    },
+    "mini.surround": {
+      "rev": "33a2ebe5df8eb4751828fcba133e18ed0fbbdfab",
+      "src": "https://github.com/nvim-mini/mini.surround"
+    },
     "nvim-lint": {
       "rev": "3d55c8f67c6ae5c15e1042571e107c7a3d5c5f4e",
       "src": "https://github.com/mfussenegger/nvim-lint"
