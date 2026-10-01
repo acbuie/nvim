@@ -5,5 +5,14 @@ vim.pack.add({
 
 require("mason").setup()
 
--- Enable
+-- Enable lsps -> comment is :MasonInstall <lsp>
 vim.lsp.enable("lua_ls") -- lua-language-server
+
+-- Web
+vim.lsp.enable("astro") -- astro-language-server
+vim.lsp.enable("cssls") -- css-lsp
+vim.lsp.enable("tailwindcss") -- tailwind-language-server
+
+-- Python
+vim.lsp.enable("ty") -- ty
+vim.lsp.enable("ruff") -- ruff
