@@ -24,6 +24,7 @@ vim.o.background = "dark"
 vim.o.signcolumn = "yes" -- Always show sign col
 vim.o.winborder = "rounded"
 vim.diagnostic.config({ virtual_text = true })
+vim.cmd("set noshowmode")
 
 -- split
 vim.o.splitright = true
