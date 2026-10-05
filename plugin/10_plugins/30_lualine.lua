@@ -23,50 +23,9 @@ local lsp_clients = function()
   return "󰣖 " .. table.concat(c, "|")
 end
 
-local colors = require("gruvbox").palette
-local custom_theme = {
-  normal = {
-    a = { bg = colors.neutral_blue, fg = colors.dark0, gui = "bold" },
-    b = { bg = colors.dark2, fg = colors.light1 },
-    c = { bg = colors.dark0, fg = colors.dark4 },
-    x = { bg = colors.dark0, fg = colors.dark4 },
-    y = { bg = colors.dark2 },
-    z = { bg = colors.neutral_aqua, fg = colors.light1 },
-  },
-  insert = {
-    a = { bg = colors.neutral_yellow, fg = colors.dark0, gui = "bold" },
-    -- b = { bg = colors.dark2, fg = colors.light1 },
-    -- c = { bg = colors.dark0, fg = colors.dark4 },
-    z = { bg = colors.neutral_aqua, fg = colors.light1 },
-  },
-  visual = {
-    a = { bg = colors.neutral_orange, fg = colors.dark0, gui = "bold" },
-    -- b = { bg = colors.dark2, fg = colors.light1 },
-    -- c = { bg = colors.dark0, fg = colors.dark4 },
-    z = { bg = colors.neutral_aqua, fg = colors.light1 },
-  },
-  replace = {
-    a = { bg = colors.neutral_red, fg = colors.dark0, gui = "bold" },
-    -- b = { bg = colors.dark2, fg = colors.light1 },
-    -- c = { bg = colors.dark0, fg = colors.dark4 },
-    z = { bg = colors.neutral_aqua, fg = colors.light1 },
-  },
-  command = {
-    a = { bg = colors.neutral_green, fg = colors.dark0, gui = "bold" },
-    -- b = { bg = colors.dark2, fg = colors.light1 },
-    -- c = { bg = colors.dark0, fg = colors.dark4 },
-    z = { bg = colors.neutral_aqua, fg = colors.light1 },
-  },
-  inactive = {
-    a = { bg = colors.dark1, fg = colors.light1, gui = "bold" },
-    -- b = { bg = colors.dark2, fg = colors.light1 },
-    -- c = { bg = colors.dark1, fg = colors.dark4 },
-  },
-}
-
 local config = {
   options = {
-    theme = custom_theme,
+    theme = "gruvbox",
     globalstatus = vim.o.laststatus == 3,
     disabled_filetypes = { statusline = { "snacks_dashboard" } },
     component_separators = { left = "", right = "" },
