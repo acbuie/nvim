@@ -7,6 +7,7 @@ local Snacks = require("snacks")
 
 Snacks.setup({
   bigfile = { enabled = true },
+  bufdelete = { enabled = true },
   dashboard = {
     enabled = true,
     sections = {
@@ -146,10 +147,6 @@ local keymaps = {
     { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
     { "gai",        function() Snacks.picker.lsp_incoming_calls() end, desc = "C[a]lls Incoming", has = "callHierarchy/incomingCalls" },
     { "gao",        function() Snacks.picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing", has = "callHierarchy/outgoingCalls" },
-
-    -- Buffers
-    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete buffer", mode = { "n" }, },
-    { "<leader>bo", function() Snacks.bufdelete.other() end, desc = "Delete other buffers", mode = { "n" }, },
 
     -- Terminal
     -- { "<leader>fT", function() Snacks.terminal() end, desc = "Terminal (cwd)", mode = "n", },
